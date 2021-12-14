@@ -10,18 +10,18 @@ app.get('/', (req, res) => {
   res.send('asdasdasd')
 })
 
-app.get('/tema', (req, res) => {
+app.get('/Ranglista', (req, res) => {
     var mysql = require('mysql')
     var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'csevego'
+      database: 'sudoku_ranglista'
     })
     
     connection.connect()
     
-    connection.query('SELECT * from tema', function (err, rows, fields) {
+    connection.query('SELECT * from adatok', function (err, rows, fields) {
       if (err) throw err
     
       console.log(rows)
